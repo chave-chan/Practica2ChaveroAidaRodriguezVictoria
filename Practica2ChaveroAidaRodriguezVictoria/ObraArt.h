@@ -4,16 +4,16 @@
 class ObraArt
 {
     public:
-        ObraArt(Codi *codi, int tipus, int alcada, int amplada, int fondaria);
-        ObraArt(int numerica, string alfanumerica, int tipus, int alcada, int amplada, int fondaria);
-        virtual ~ObraArt();
+        ObraArt(Codi *codi, int tipus, int alçada, int amplada, int fondaria);
+        ObraArt(int numerica, string alfanumerica, int tipus, int alçada, int amplada, int fondaria);
+        virtual ~ObraArt() = 0;
 
         const static int QUADRE = 22;
         const static int ESTATUA = 222;
 
         Codi getCodi();
         int getTipus();
-        int getAlcada();
+        int getAlçada();
         int getAmplada();
         int getFondaria();
         virtual string getType();
@@ -26,7 +26,7 @@ class ObraArt
     private:
         Codi *codi;
         int tipus;
-        int alcada;
+        int alçada;
         int amplada;
         int fondaria;
 };

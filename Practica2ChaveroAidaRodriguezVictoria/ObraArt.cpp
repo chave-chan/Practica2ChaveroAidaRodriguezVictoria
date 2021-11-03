@@ -1,27 +1,27 @@
 #include "ObraArt.h"
 
-ObraArt::ObraArt(Codi *codi, int tipus, int alcada, int amplada, int fondaria)
+ObraArt::ObraArt(Codi *codi, int tipus, int alçada, int amplada, int fondaria)
 {
     //ctor
-    if(IsNull(codi) || tipus != 22 || tipus != 222 || alcada <= 0 || amplada <= 0 || fondaria <=0){
+    if(IsNull(codi) || tipus != 22 || tipus != 222 || alçada <= 0 || amplada <= 0 || fondaria <=0){
         throw "Dades incorrectes";
     } else {
         this->codi = codi;
         this->tipus = tipus;
-        this->alcada = alcada;
+        this->alçada = alçada;
         this->amplada = amplada;
         this->fondaria = fondaria;
     }
 }
 
-ObraArt::ObraArt(int numerica, string alfanumerica, int tipus, int alcada, int amplada, int fondaria)
+ObraArt::ObraArt(int numerica, string alfanumerica, int tipus, int alçada, int amplada, int fondaria)
 {
     //ctor
     Codi *codi = new Codi(numerica, alfanumerica);
     if(IsNull(codi)){
         throw "Dades incorrectes";
     } else {
-        ObraArt(codi, tipus, alcada, amplada, fondaria);
+        ObraArt(codi, tipus, alçada, amplada, fondaria);
     }
 }
 
@@ -30,36 +30,36 @@ ObraArt::~ObraArt()
     //dtor
 }
 
-    Codi getCodi(){
-        return this->codi;
-    }
+Codi ObraArt::getCodi(){
+    return this->codi;
+}
 
-    int getTipus(){
-        return this->tipus;
-    }
+int ObraArt::getTipus(){
+    return this->tipus;
+}
 
-    int getAlcada(){
-        return this->alcada;
-    }
+int ObraArt::getAlçada(){
+    return this->alçada;
+}
 
-    int getAmplada(){
-        return this->amplada;
-    }
+int ObraArt::getAmplada(){
+    return this->amplada;
+}
 
-    int getFondaria(){
-        return this->fondaria;
-    }
+int ObraArt::getFondaria(){
+    return this->fondaria;
+}
 
-    virtual string getType() = 0;
+virtual string ObraArt::getType() = 0;
 
-    void visualitza(){
-        cout << "Codi de l'obra: " << codi->visualitza << " de tipus " << this->tipus;
-    }
+void ObraArt::visualitza(){
+    cout << "Codi de l'obra: " << codi->visualitza << " de tipus " << this->tipus;
+}
 
-    bool operator==(ObraArt *obraArt){
-        return this->codi==obraArt->codi;
-    }
+bool ObraArt::operator==(ObraArt *obraArt){
+    return this->codi==obraArt->codi;
+}
 
-    double volumEmpaquetatge(){
-        return alcada * amplada * fondaria;
-    }
+double ObraArt::volumEmpaquetatge(){
+    return alçada * amplada * fondaria;
+}
