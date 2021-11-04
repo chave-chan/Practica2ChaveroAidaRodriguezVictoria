@@ -28,6 +28,7 @@ class Museu
 
         static bool hiEs(ObraArt *o, node *primer);
         static int onVa(bool propietat);
+        void getQuantes(); //Metode afegit per comptar les obres d'art del museu
 };
 
 #endif // MUSEU_H
