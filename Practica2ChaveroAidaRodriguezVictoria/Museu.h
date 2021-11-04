@@ -11,7 +11,7 @@ class Museu
         void afegirObraArt(ObraArt *p, bool propietat);
         void eliminarObraArt(ObraArt *p);
         bool operator==(Museu o);
-        bool operator<(Muse o);
+        bool operator<(Museu o);
         bool operator>(Museu o);
         bool hihaQuadres(int tipus);
         void visualitza();
