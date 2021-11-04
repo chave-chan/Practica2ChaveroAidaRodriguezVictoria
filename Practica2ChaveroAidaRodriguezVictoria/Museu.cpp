@@ -115,6 +115,22 @@ bool Museu::hihaQuadres(int tipus)
 }
 
 void Museu::visualitza(){
+    string text;
+    int n = 1;
     node *p0 = magatzem[0];
     node *p1 = magatzem[1];
+
+    while(magatzem!=NULL){
+        if(p0!=NULL){
+            text.append(n + "" + p0->inf->visualitza() + "\n");
+            n++;
+            p0 = p0->seg;
+        }
+        if(p1!=NULL){
+            text.append(n + "" + p1->inf->visualitza() + "\n");
+            n++;
+            p1 = p1->seg;
+        }
+    }
+    return text;
 }
