@@ -1,7 +1,6 @@
 #ifndef CODI_H
 #define CODI_H
 
-
 class Codi
 {
     public:
