@@ -8,7 +8,13 @@ class Museu
         Museu(ObraArt *e, bool propietat);
         virtual ~Museu();
 
-        static bool hiEs(ObraArt *o, node *primer);
+        void afegirObraArt(ObraArt *p, bool propietat);
+        void eliminarObraArt(ObraArt *p);
+        bool operator==(Museu o);
+        bool operator<(Muse o);
+        bool operator>(Museu o);
+        bool hihaQuadres(int tipus);
+        void visualitza();
 
     protected:
 
@@ -19,6 +25,9 @@ class Museu
             ObraArt *inf;
             node* seg;
         };
+
+        static bool hiEs(ObraArt *o, node *primer);
+        static int onVa(bool propietat);
 };
 
 #endif // MUSEU_H
