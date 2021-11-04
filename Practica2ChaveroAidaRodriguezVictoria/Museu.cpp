@@ -9,6 +9,11 @@ Museu::Museu()
      }
 }
 
+Museu::Museu(ObraArt *e, bool propietat){
+    this->magatzem = Museu().magatzem;
+    this->afegirObraArt(e, propietat);
+}
+
 Museu::~Museu()
 {
     //dtor
